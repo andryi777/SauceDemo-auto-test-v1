@@ -4,7 +4,11 @@ Para ejecutar por consola, ubicarse en la carpeta del proyecto y lanzar este com
 
 ```
 mvn test -Denvironment=local_chrome -Dcucumber.features='src/test/resources/features/' -Dcucumber.filter.tags='@Login' -Dcucumber.plugin="json:target/site/result.json" -Dcucumber.glue='demo'
+```
 
+Una vez que termine la prueba, lanzar el siguiente comando:
+```
+mvn serenity:aggregate
 ```
 
 
