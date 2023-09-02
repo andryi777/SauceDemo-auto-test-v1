@@ -25,20 +25,15 @@ public class AppHomepage extends PageObject {
 	public long getWdwTimeOut() {
 		return wdwTimeOut;
 	}
-
-	public void inicializar(String url) {
-		getDriver().navigate().to(url);
-		getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().maximize();
-		getDriver().manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
-	}
 	
 	public String getTitulo() {
 		pageObjectUtil.seleniumClick(getDriver(), xpathHomePage.lblTitulo, 0);
+		Serenity.takeScreenshot();
 		return pageObjectUtil.seleniumGetTexto(getDriver(), xpathHomePage.lblTitulo, 0);
 	}
 	
 	public void seleccionarItem(String item) {
+		Serenity.takeScreenshot();
 		pageObjectUtil.seleniumClick(getDriver(), xpathHomePage.lblItem(item), 0);
 
 	}

@@ -2,6 +2,7 @@ package demo.main.page;
 
 import demo.main.util.PageObjectUtil;
 import demo.main.xpath.XpathItemDetalle;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.PageObject;
 
 public class AppItemDetallePage extends PageObject {
@@ -19,6 +20,7 @@ public class AppItemDetallePage extends PageObject {
 	}
 
 	public String getPrecio() {
+		Serenity.takeScreenshot();
 		pageObjectUtil.seleniumClick(getDriver(), xpathItemDetalle.lblPrecioDetalle, 0);
 		return pageObjectUtil.seleniumGetTexto(getDriver(), xpathItemDetalle.lblPrecioDetalle, 0);
 	}
