@@ -10,7 +10,7 @@ Una vez que termine la prueba, lanzar el siguiente comando:
 ```
 mvn serenity:aggregate
 ```
-
+Y se creará una carpeta Target donde estará las evidencias, ir a la carpeta Site y abrir el archivo index.html donde se visualizarán las evidencias
 
 En caso de ejecutar con Jenkins
 
