@@ -28,6 +28,7 @@ pipeline {
         
 		stage("Ejecutar Pruebas") {
             steps {
+            	sh ("chmod +x ${env.WORKSPACE}/src/test/resources/driver/chromedriver") 
 	            sh ("mvn test -Denvironment=local_chrome -Dcucumber.features=src/test/resources/features/ -Dcucumber.filter.tags=${ESCENARIO} -Dcucumber.plugin=json:target/site/result.json -Dcucumber.glue=demo")
 			}
         }
